@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "claude-codex-bridge"
+name = "codex-claude-bridge"
 version = "0.1.0"
 description = "Run Claude Code against Codex CLI through a minimal Anthropic-compatible bridge."
 readme = "README.md"

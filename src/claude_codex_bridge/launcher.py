@@ -58,7 +58,7 @@ def main(argv: list[str] | None = None) -> int:
     child_env = dict(os.environ)
     child_env.update(env)
     child_env["ANTHROPIC_BASE_URL"] = settings.bridge_url
-    child_env["ANTHROPIC_API_KEY"] = child_env.get("ANTHROPIC_API_KEY", "claude-codex-bridge-local")
+    child_env["ANTHROPIC_API_KEY"] = child_env.get("ANTHROPIC_API_KEY", "codex-claude-bridge-local")
     child_env.pop("ANTHROPIC_AUTH_TOKEN", None)
     child_env["ANTHROPIC_DEFAULT_SONNET_MODEL"] = settings.model_sonnet
     child_env["ANTHROPIC_DEFAULT_OPUS_MODEL"] = settings.model_opus

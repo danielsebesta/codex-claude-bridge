@@ -1,6 +1,6 @@
-# claude-codex-bridge
+# codex-claude-bridge
 
-`claude-codex-bridge` is an experimental compatibility layer that lets the `claude` CLI talk to a local Anthropic-style endpoint backed by `codex exec`.
+`codex-claude-bridge` is an experimental compatibility layer that lets the `claude` CLI talk to a local Anthropic-style endpoint backed by `codex exec`.
 
 It exists for one narrow use case: you want the Claude Code client experience, but you want responses to come from your logged-in Codex CLI session instead of Anthropic's hosted models.
 
@@ -52,15 +52,15 @@ pip install -e .
 The launcher and bridge load environment variables from the first file they find in this order:
 
 1. `CLAUDE_CODEX_BRIDGE_ENV_FILE`
-2. `./.claude-codex-bridge.env`
-3. `$XDG_CONFIG_HOME/claude-codex-bridge/config.env`
-4. `~/.config/claude-codex-bridge/config.env`
+2. `./.codex-claude-bridge.env`
+3. `$XDG_CONFIG_HOME/codex-claude-bridge/config.env`
+4. `~/.config/codex-claude-bridge/config.env`
 
 Start with:
 
 ```bash
-mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/claude-codex-bridge"
-cp config.env.example "${XDG_CONFIG_HOME:-$HOME/.config}/claude-codex-bridge/config.env"
+mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/codex-claude-bridge"
+cp config.env.example "${XDG_CONFIG_HOME:-$HOME/.config}/codex-claude-bridge/config.env"
 ```
 
 Key settings:

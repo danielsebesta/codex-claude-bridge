@@ -15,7 +15,7 @@ from urllib.parse import urlparse
 from .config import BridgeSettings, merged_env
 
 
-SERVER_VERSION = "claude-codex-bridge/0.1"
+SERVER_VERSION = "codex-claude-bridge/0.1"
 
 
 def coerce_text(value: Any) -> str:
@@ -276,7 +276,7 @@ class RequestHandler(BaseHTTPRequestHandler):
                 HTTPStatus.OK,
                 {
                     "ok": True,
-                    "service": "claude-codex-bridge",
+                    "service": "codex-claude-bridge",
                     "cwd": str(self.bridge_server.settings.workdir or self.bridge_server.cwd),
                     "default_model": self.bridge_server.settings.default_model,
                 },
@@ -395,7 +395,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     server = BridgeServer((settings.host, settings.port), RequestHandler, settings, Path.cwd())
-    print(f"claude-codex-bridge listening on {settings.base_url}", flush=True)
+    print(f"codex-claude-bridge listening on {settings.base_url}", flush=True)
     print(f"codex working directory: {settings.workdir or Path.cwd()}", flush=True)
     server.serve_forever()
     return 0

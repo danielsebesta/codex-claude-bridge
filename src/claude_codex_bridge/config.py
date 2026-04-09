@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Iterable
 
 
-DEFAULT_ENV_FILENAME = ".claude-codex-bridge.env"
+DEFAULT_ENV_FILENAME = ".codex-claude-bridge.env"
 
 
 def default_env_candidates(cwd: Path | None = None) -> list[Path]:
@@ -15,8 +15,8 @@ def default_env_candidates(cwd: Path | None = None) -> list[Path]:
     xdg_config_home = Path(os.environ.get("XDG_CONFIG_HOME", Path.home() / ".config"))
     return [
         base / DEFAULT_ENV_FILENAME,
-        xdg_config_home / "claude-codex-bridge" / "config.env",
-        Path.home() / ".config" / "claude-codex-bridge" / "config.env",
+        xdg_config_home / "codex-claude-bridge" / "config.env",
+        Path.home() / ".config" / "codex-claude-bridge" / "config.env",
     ]
 
 
